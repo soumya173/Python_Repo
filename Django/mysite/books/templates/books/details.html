@@ -1,0 +1,130 @@
+{% extends 'books/base.html' %}
+
+{% block body %}
+
+<div class="container-fluid text-center">
+	<div class="row content">
+		<div class="col-sm-2">
+			<!-- <p><a href="#">Link</a></p>
+			<p><a href="#">Link</a></p>
+			<p><a href="#">Link</a></p> -->
+		</div>
+		<div class="col-sm-8 text-left">
+			<h1>{{book.book_name}}</h1>
+			<p><img src="{{book.book_image_url}}" class="img-responsive" style="height: 400px; margin: auto;" alt="Image"></p>
+			<hr>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-8">
+						<h3>Product Details:</h3>
+					</div>
+					<div class="col-sm-4">
+						 <button type="button" class="btn btn-primary btn-block">Add to <span class="glyphicon glyphicon-shopping-cart"></span></button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<p>Author: </p>
+					</div>
+					<div class="col-sm-8">
+						<p>{{book.book_author}}</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<p>Price: </p>
+					</div>
+					<div class="col-sm-8">
+						<p>Rs. {{book.book_price}}/-</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<p>Type: </p>
+					</div>
+					<div class="col-sm-8">
+						<span class="label label-warning">{{book.book_type}}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<p>Rating: </p>
+					</div>
+					<div class="col-sm-8">
+						{% for i in rating %}
+							<span class="glyphicon glyphicon-star" style="color: #f2ce08"></span>
+						{% endfor %}
+
+						{% for i in remaining %}
+							<span class="glyphicon glyphicon-star" style="color: #bab6a7"></span>
+						{% endfor %}
+
+						<span class="label label-primary"> {{book.book_rating}} / 5</span>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<p>Available: </p>
+					</div>
+					<div class="col-sm-8">
+						<span class="label label-success">{{book.book_available}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sidenav">
+			<div class="well">
+				<p>For ADs contact</p>
+				<h6>Bablu Ji</h3>
+				<h5>(+91) 9525127378</h2>
+			</div>
+			<div class="well">
+				<a href="https://www.xvideos.com" target="_blank"><img src="http://porngif.top/gif/ze%20zadu/0205.gif" style="height: 200px; width: 100%;"></a>
+				<p>FREE Pleasures</p>
+				<p>Sign Up @ <br><a href="https://www.xvideos.com" target="_blank">xvideos.com</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="widget-area no-padding blank">
+				<div class="status-upload">
+					<form>
+						<textarea placeholder="Wana give some feedback?" ></textarea>
+						<ul>
+							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+							<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+						</ul>
+						<button type="submit" class="btn btn-success green"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div class="row comments-row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>{{user.user_fname}} {{user.user_lname}}</strong> <span class="text-muted">Commented {{comments.time_string}}</span>
+				</div>
+				<div class="panel-body">
+					{{comments.comment_string}}
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+</div> -->
+
+{% endblock %}
