@@ -2,11 +2,20 @@ from tkinter import filedialog, messagebox
 from tkinter import *
 import tkinter.scrolledtext as ScrolledText
 import os
+import logging
+import datetime
 # from ScrolledText import *
+
+LOGGING = True
 
 class Editor(object):
 	"""docstring for MyUi"""
 	def __init__(self, rootone):
+
+		curDateTime = datetime.datetime.now().strftime("%d-%B-%Y_%I:%M%p")
+		logging.basicConfig(filename='logs/{}.log' % curDateTime, filemode='w', format='%(asctime)s - %(message)s')
+		logging.info('Admin logged in')
+
 		rootone.state("zoomed")
 		frame = Frame(rootone)
 		frame.pack()
