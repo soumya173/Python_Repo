@@ -25,7 +25,6 @@ class Editor(object):
 
 		# Setting up log files and configurations
 		self.configLogging()
-		exit(0)
 
 		# Enable zoomed window at startup
 		rootone.state("zoomed")
@@ -116,10 +115,12 @@ class Editor(object):
 	def selectAllOperation(self, event=None):
 		logger.debug("Performing select all operation")
 		# self.textBox.tag_add('sel', '1.0', 'end')
-		numLines = len(self.textBox.get("1.0", "end").split("\n"))
+
+		numLines = len(self.textBox.get("1.0", "end").split('\n'))
+		print(numLines)
 		for i in range(1, numLines):
-			# print(i)
 			self.textBox.tag_add('sel', '{}.0'.format(i), '{}.end'.format(i))
+			# self.textBox.tag_add('sel', '1.0', '1.end')
 
 		logger.debug("Leaving %s:selectAllOperation", self.__class__.__name__)
 
@@ -297,16 +298,12 @@ class Editor(object):
 		# Do not log if logging is disabled by user
 		logger.disabled = (not LOGGING)
 
-		# Need to fix this
-		print(os.path.dirname(__file__))
-
 		logFileName = ""
 		if LOGGING:
 			dirPath = "logs"
 
 			# Create log directory if it's not already present
 			if not os.path.exists(dirPath):
-				logger.debug("Creating directory: %s/%s", os.getcwd(), dirPath)
 				os.mkdir(dirPath)
 
 			# date and time of log file creation in file name
